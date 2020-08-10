@@ -12,6 +12,15 @@ import re
 filename = "ETL8G_03"
 
 def read_etl(filename):
+    """
+    Convert the binary data 「ETL Character Database」into image data and save it in "./extract" path
+
+    Parameters:
+    ----------
+    filename : string
+        Path to the binary data 「ETL Character Database」
+    """
+
     RECORD_SIZE = 8199
     i = 0
     print("Reading {}".format(filename))
@@ -43,6 +52,16 @@ def read_etl(filename):
 
 
 def load_data():
+    """
+    Load 「ETL Character Database」 from "./extract" path
+
+    Returns:
+    ----------
+    Tow taples : (x_train, y_train), (x_test, y_test)
+        x_train, x_test : shape(num_samples, 40, 40)
+        y_train, y_test : shape(num_samples,)
+    """
+
     x_train=[]
     y_train=[]
     x_test=[]
@@ -94,3 +113,4 @@ def load_data():
     
 
     return (np.array(x_train), np.array(y_train)), (np.array(x_test), np.array(y_test))
+
