@@ -1,0 +1,6 @@
+CharacterRecognition
+====================
+
+.. toctree::
+   :maxdepth: 4
+

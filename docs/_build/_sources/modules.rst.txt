@@ -1,0 +1,7 @@
+CharacterRecognition
+====================
+
+.. automodule:: cnn
+   :members:
+
+   
