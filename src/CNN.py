@@ -12,8 +12,8 @@ class cnn:
     """
     Create CNN model
 
-    Attributes
-    ----------
+    Attributes:
+    ------------
     img_size : int
         input image size
     model_path : string
@@ -69,7 +69,7 @@ class cnn:
         Predict character image 
 
         Parameters:
-        ----------
+        ------------
         image : numpy.ndarray
             shape(img_width, img_height)
         """

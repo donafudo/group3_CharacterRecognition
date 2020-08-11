@@ -16,7 +16,7 @@ def read_etl(filename):
     Convert the binary data 「ETL Character Database」into image data and save it in "./extract" path
 
     Parameters:
-    ----------
+    ------------
     filename : string
         Path to the binary data 「ETL Character Database」
     """
