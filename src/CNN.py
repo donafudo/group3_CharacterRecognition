@@ -5,13 +5,13 @@ from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 import pandas as pd
 import numpy as np
-import LoadETL
+import load_etl
 import cv2
 
-class CNN:
+class cnn:
     """
     Create CNN model
-    
+
     Attributes
     ----------
     img_size : int

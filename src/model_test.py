@@ -1,7 +1,7 @@
 import cv2
 import sys
 import os
-import CNN
+import cnn
 
 
 
@@ -15,7 +15,7 @@ for img_path in sys.argv[1:]:
     
     image = cv2.imread(img_path, 0)
 
-    cnn = CNN.CNN()
+    cnn = cnn.cnn()
     
     cnn.predict(image)
 
