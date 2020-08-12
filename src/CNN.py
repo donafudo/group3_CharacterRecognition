@@ -20,9 +20,18 @@ class cnn:
         Save and load destination path
     """
 
-    def __init__(self):
-        self.img_size=40
-        self.model_path="./model_001"
+    def __init__(self, img_size=40, model_path="./TraindModel/model_001"):
+        """
+        Initialize
+
+        Parameters:
+        ------------
+        img_size : int
+        model_path : string
+        """
+
+        self.img_size=img_size
+        self.model_path=model_path
 
     def training(self):
         """
