@@ -20,7 +20,7 @@ class cnn:
         Save and load destination path
     """
 
-    def __init__(self, img_size=40, model_path="./TraindModel/model_001"):
+    def __init__(self, img_size=40, model_path="./traind_model/model_001"):
         """
         Initialize
 
@@ -40,10 +40,10 @@ class cnn:
 
         num_classes=75
         #[参照] 「ETL Character Database」
-        (x_train, y_train), (x_test, y_test)  = LoadETL.load_data()
+        (x_train, y_train), (x_test, y_test)  = load_etl.load_data(self.img_size)
 
-        x_train = x_train.reshape(x_train.shape[0], img_size, img_size, 1)
-        x_test = x_test.reshape(x_test.shape[0], img_size, img_size, 1)
+        x_train = x_train.reshape(x_train.shape[0], self.img_size, self.img_size, 1)
+        x_test = x_test.reshape(x_test.shape[0], self.img_size, self.img_size, 1)
 
         #labelをone hot vectorに変換
         y_train = pd.get_dummies(y_train)
@@ -51,7 +51,7 @@ class cnn:
 
         #modeの構築
         model = Sequential()
-        model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(img_size, img_size, 1)))
+        model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(self.img_size, self.img_size, 1)))
         model.add(MaxPooling2D(pool_size=(2, 2)))
         model.add(Dropout(0.25))
         model.add(Conv2D(64, (3, 3), activation='relu'))

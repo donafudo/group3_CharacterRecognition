@@ -51,14 +51,19 @@ def read_etl(filename):
 #    read_etl("ETL8G_{}".format(str(i).zfill(2)))
 
 
-def load_data():
+def load_data(size):
     """
     Load 「ETL Character Database」 from "./extract" path
+
+    Parameters:
+    -----------
+    size : int
+        image size
 
     Returns:
     ----------
     Tow taples : (x_train, y_train), (x_test, y_test)
-        x_train, x_test : shape(num_samples, 40, 40)
+        x_train, x_test : shape(num_samples, size, size)
         y_train, y_test : shape(num_samples,)
     """
 
@@ -68,7 +73,6 @@ def load_data():
     y_test=[]
 
     test_num=10
-    size = 40
 
     path="./extract/"
     dirs=[d for d in os.listdir(path) if os.path.isdir(os.path.join(path, d))]
@@ -81,11 +85,11 @@ def load_data():
             image = cv2.imread(image_file, 0)
 
             #reduce noise
-            ret, image = cv2.threshold(image, 230, 255, cv2.THRESH_BINARY)
+            #ret, image = cv2.threshold(image, 230, 255, cv2.THRESH_BINARY)
             #resize image
             image = cv2.resize(image, (size, size))
             #binarization
-            ret, image = cv2.threshold(image, 250, 255, cv2.THRESH_BINARY)
+            #ret, image = cv2.threshold(image, 250, 255, cv2.THRESH_BINARY)
             #reverse image
             image = cv2.bitwise_not(image)
             #make image flat
