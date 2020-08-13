@@ -15,14 +15,10 @@ for img_path in sys.argv[1:]:
     
     image = cv2.imread(img_path, 0)
 
+    di_path="./traind_model/"
 
+    cnn_model = cnn.cnn(40,di_path + "model_40px")
     
-    #cnn.predict(image)
+    cnn.predict(image)
 
-di_path="./traind_model/"
-model_names=["model_20px","model_30px","model_row40px"]
-img_sizes=[20,30,40]
 
-#for i in range(1):
-cnn_model = cnn.cnn(img_sizes[2],di_path + model_names[2])
-cnn_model.training()
